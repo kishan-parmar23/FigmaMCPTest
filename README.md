@@ -32,11 +32,11 @@ Feel free to ask any clarifying questions before you build the component."*
 
 ### Mock-Up
 
-![MockUp Images](Imgages/Mock-Up.png)
+![MockUp Images](Images/MockUp.png)
 
 ### Generate Design
 
-![Prototype Image](Images/Prototype1.png)
+![Prototype Image](Images/Prototyp1.png)
 
 ![Prototype Image](Images/Prototype2.png)
 
