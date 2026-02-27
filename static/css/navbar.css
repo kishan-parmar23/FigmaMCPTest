@@ -1,0 +1,182 @@
+:root {
+  /* Replace with colors from your Figma navbar */
+  --color-nav-bg: #ffffff;
+  --color-nav-border: #e3e3e3;
+  --color-nav-text: #222222;
+  --color-nav-text-muted: #555555;
+  --color-nav-accent: #c0874a;
+  --color-nav-hover-bg: #f5f1ec;
+  --color-nav-focus-ring: #0a84ff;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #faf7f3;
+  color: #222222;
+}
+
+.app-main {
+  max-width: 1200px;
+  margin: 1.5rem auto;
+  padding: 0 1.25rem;
+}
+
+.app-navbar {
+  background-color: var(--color-nav-bg);
+  color: var(--color-nav-text);
+  border-bottom: 1px solid var(--color-nav-border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.app-navbar__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-navbar__logo {
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--color-nav-text);
+  text-decoration: none;
+}
+
+.app-navbar__toggle {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.app-navbar__toggle-bar {
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background-color: var(--color-nav-text);
+  transition: transform 180ms ease, opacity 180ms ease, background-color 150ms ease;
+}
+
+.app-navbar__toggle:focus-visible,
+.app-navbar__link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-nav-focus-ring);
+  border-radius: 999px;
+}
+
+.app-navbar__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.app-navbar__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: var(--color-nav-text-muted);
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.app-navbar__item--primary .app-navbar__link {
+  font-weight: 500;
+  color: var(--color-nav-text);
+}
+
+.app-navbar__link:hover {
+  background-color: var(--color-nav-hover-bg);
+  color: var(--color-nav-text);
+}
+
+@media (min-width: 768px) {
+  .app-navbar__toggle {
+    display: none;
+  }
+
+  .app-navbar__links {
+    flex-direction: row;
+  }
+
+  .app-navbar__item {
+    display: block;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .app-navbar__links {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background-color: var(--color-nav-bg);
+    border-bottom: 1px solid var(--color-nav-border);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 1.25rem 0.75rem;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: max-height 200ms ease, opacity 200ms ease, transform 200ms ease;
+  }
+
+  .app-navbar__links.is-open {
+    max-height: 320px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .app-navbar__item--primary {
+    display: flex;
+  }
+
+  .app-navbar__item--secondary {
+    display: none;
+  }
+
+  .app-navbar__links.is-open .app-navbar__item--secondary {
+    display: flex;
+  }
+
+  .app-navbar__link {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+.app-navbar__toggle[aria-expanded="true"] .app-navbar__toggle-bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.app-navbar__toggle[aria-expanded="true"] .app-navbar__toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.app-navbar__toggle[aria-expanded="true"] .app-navbar__toggle-bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+

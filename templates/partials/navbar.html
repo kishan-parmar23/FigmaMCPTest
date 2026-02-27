@@ -1,0 +1,43 @@
+{% load static %}
+
+<nav class="app-navbar" aria-label="Primary">
+  <div class="app-navbar__inner">
+    <a href="{% url 'home' %}" class="app-navbar__logo">
+      Interior Notes
+    </a>
+
+    <button
+      class="app-navbar__toggle"
+      type="button"
+      aria-label="Toggle navigation"
+      aria-expanded="false"
+      aria-controls="primary-nav"
+    >
+      <span class="app-navbar__toggle-bar"></span>
+      <span class="app-navbar__toggle-bar"></span>
+      <span class="app-navbar__toggle-bar"></span>
+    </button>
+
+    <ul id="primary-nav" class="app-navbar__links" data-collapsed="true">
+      <li class="app-navbar__item app-navbar__item--primary">
+        <a href="{% url 'home' %}" class="app-navbar__link">Home</a>
+      </li>
+      <li class="app-navbar__item app-navbar__item--primary">
+        <a href="{% url 'saved_ideas' %}" class="app-navbar__link">Saved Ideas</a>
+      </li>
+      <li class="app-navbar__item app-navbar__item--secondary">
+        <a href="{% url 'future_ideas' %}" class="app-navbar__link">Future Ideas</a>
+      </li>
+      <li class="app-navbar__item app-navbar__item--secondary">
+        <a href="{% url 'saved_contacts' %}" class="app-navbar__link">Saved Contacts</a>
+      </li>
+      <li class="app-navbar__item app-navbar__item--secondary">
+        <a href="{% url 'help' %}" class="app-navbar__link">Help</a>
+      </li>
+      <li class="app-navbar__item app-navbar__item--secondary">
+        <a href="{% url 'forum' %}" class="app-navbar__link">Forum</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
